@@ -21,7 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -54,9 +54,9 @@ begin
    
     tb : PROCESS
         BEGIN
-            for i in 0 to 3 loop
+            for i in 0 to 15 loop
                 wait for 100 ms;
-                sw_i(i) <= '1';
+                sw_i <= sw_i + 1;
             end loop;
             wait;
         END PROCESS tb;
