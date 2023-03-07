@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../zad3_gray.srcs/sources_1/new/top.vhd" \
+"../../../../zad3_gray.srcs/sim_1/new/counter_gray_tb.vhd" \
+
+# Do not sort compile order
+nosort
