@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../parity_generator.srcs/sources_1/new/parity.vhd" \
+"../../../../parity_generator.srcs/sim_1/new/parity.vhd" \
+
+# Do not sort compile order
+nosort

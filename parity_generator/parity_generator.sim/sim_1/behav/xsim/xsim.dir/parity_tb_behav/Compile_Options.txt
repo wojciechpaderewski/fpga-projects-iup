@@ -1,0 +1,1 @@
+-wto "f48ad89c5ea14dd6a2764d8889bdc855" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "parity_tb_behav" "xil_defaultlib.parity_tb" -log "elaborate.log" 
