@@ -1,3 +1,6 @@
+--Cezary Wieczorkowski
+--Wojciech Paderewski
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -16,7 +19,7 @@ architecture Behavioral of top is
 begin
     COUNT : process(clk_i, rst_i)
     begin
-        if (rst_i = '0') then
+        if (rst_i = '1') then
             counter_bin <= "000";
         else
             if falling_edge(clk_i) then

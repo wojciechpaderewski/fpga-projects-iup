@@ -17,22 +17,14 @@
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
-
+--Cezary Wieczorkowski
+--Wojciech Paderewski
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity counter_gray_tb is
---  Port ( );
 end counter_gray_tb;
 
 architecture Behavioral of counter_gray_tb is
@@ -45,8 +37,8 @@ architecture Behavioral of counter_gray_tb is
         );
     end component;
     
-    signal clk_i : STD_LOGIC;
-    signal rst_i : STD_LOGIC;
+    signal clk_i : STD_LOGIC := '0';
+    signal rst_i : STD_LOGIC := '0';
     signal led_o : STD_LOGIC_VECTOR (2 downto 0);
 begin
 
@@ -54,15 +46,15 @@ begin
    
     tb : PROCESS
         BEGIN
-            rst_i <= '0';
-            wait for 50 ms;
             rst_i <= '1';
+            wait for 50 ms;
+            rst_i <= '0';
             wait for 50 ms;
             for i in 0 to 15 loop
                 if (i = 4) then 
-                   rst_i <= '0';
+                   rst_i <= '1';
                     wait for 50 ms;
-                    rst_i <= '1';
+                    rst_i <= '0';
                     wait for 50 ms; 
                 else
                     wait for 50 ms;

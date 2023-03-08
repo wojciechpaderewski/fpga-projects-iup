@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Designs/IUP/fpga-projects-iup/sequence/sequence.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Designs/IUP/fpga-projects-iup/sequence/sequence.srcs/sim_1/new/sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sim'
