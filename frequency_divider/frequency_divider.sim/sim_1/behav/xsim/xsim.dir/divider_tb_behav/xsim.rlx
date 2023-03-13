@@ -1,0 +1,12 @@
+
+{ 
+    crc :  2461359912060860164  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 79bcee9e70904e8f9aaf48eecf8c7959 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot divider_tb_behav xil_defaultlib.divider_tb" , 
+    buildDate : "Dec  6 2018" , 
+    buildTime : "23:39:36" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/divider_tb_behav/xsimk\"   \"xsim.dir/divider_tb_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/divider_tb_behav/obj/xsim_1.lnx64.o\" -L\"/home/czaras/xilinx/Vivado/2018.3/lib/lnx64.o\" -lrdi_simulator_kernel  -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
