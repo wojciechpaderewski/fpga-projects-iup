@@ -30,7 +30,7 @@ entity top is
 end top;
 
 architecture Behavioral of top is
-    constant N : natural := 10;
+    constant N : natural := 26;     --divider for simulation set to 1+8+8+5+4
     signal counter : natural := 0;
     signal div_out : std_logic := '0';
 begin
@@ -42,7 +42,7 @@ begin
             else 
                 if rising_edge(clk_i) then
                     counter <= counter + 1;     --increment counter every clock cycle
-                    if counter >= N then        --until divisor is reached
+                    if counter >= N/2 then        --until divisor is reached
                         counter <= 0;           --then zero the counter
                         div_out <= not div_out; -- and change output state
                     end if;

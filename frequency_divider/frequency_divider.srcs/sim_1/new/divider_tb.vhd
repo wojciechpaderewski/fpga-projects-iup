@@ -45,11 +45,11 @@ begin
     
     tb : process
         begin
-            wait for 5ns;
+            wait for 1ns;
             rst_i <= '0';
-            wait for 200ns;
+            wait for 600ns;
             rst_i <= '1';
-            wait for 5ns;
+            wait for 1ns;
             rst_i <= '0';
             wait;  
     end process tb;
