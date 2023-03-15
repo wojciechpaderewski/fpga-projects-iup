@@ -40,11 +40,14 @@ begin
                 div_out <= '0';
                 counter <= 0;
             else 
-                if rising_edge(clk_i) then
+                if falling_edge(clk_i) then
                     counter <= counter + 1;     --increment counter every clock cycle
-                    if counter >= N/2 then        --until divisor is reached
-                        counter <= 0;           --then zero the counter
-                        div_out <= not div_out; -- and change output state
+                    if counter = N/2 - 1 then   --change state in mid cycle
+                         div_out <= not div_out;
+                    end if;
+                    if counter >= N-1 then      --change state at the end of the output cycle
+                        counter <= 0;           --zero the counter
+                        div_out <= not div_out; 
                     end if;
                 end if;
             end if;
