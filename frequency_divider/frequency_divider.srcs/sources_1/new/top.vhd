@@ -30,7 +30,8 @@ entity top is
 end top;
 
 architecture Behavioral of top is
-    constant N : natural := 26;     --divider for simulation set to 1+8+8+5+4
+--    constant N : natural := 26;     --divider for simulation set to 1+8+8+5+4
+    constant N : natural := 100000000;
     signal counter : natural := 0;
     signal div_out : std_logic := '0';
 begin
