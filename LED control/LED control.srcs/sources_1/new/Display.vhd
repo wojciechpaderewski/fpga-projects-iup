@@ -1,35 +1,5 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 01.04.2023 14:42:22
--- Design Name: 
--- Module Name: Display - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity Display is
  Port ( 
@@ -41,10 +11,56 @@ entity Display is
  );
 end Display;
 
-
 architecture Behavioral of Display is
+    component FrequencyDivider
+         generic(
+              divider : integer
+         ); 
+         Port (
+            clk_i : in STD_LOGIC;
+            clk_out: out STD_LOGIC
+         );             
+     end component;
 
+     signal which_display :  STD_LOGIC_VECTOR (3 downto 0) := "1110";
+     signal display_value :  STD_LOGIC_VECTOR (7 downto 0) := "00000000";
+     signal divided_clk: STD_LOGIC := '0';
 begin
 
+    d:FrequencyDivider
+    Generic Map (
+        divider => 1000000
+    )
+    Port Map ( clk_i => clk_i,
+               clk_out => divided_clk 
+    );
 
+    show_on_display : process(clk_i, digit_i, rst_i)
+    begin
+        if (rst_i = '1') then
+            which_display <= "0000";
+            display_value <= "11111111";
+        else
+         if rising_edge(divided_clk) then
+            case which_display is
+                when "1110" =>
+                    display_value <= digit_i(7 downto 0);
+                    which_display <= "1101";
+                when "1101" =>
+                    display_value <= digit_i(15 downto 8);
+                    which_display <= "1011";
+                when "1011" =>
+                    display_value <= digit_i(23 downto 16);
+                    which_display <= "0111";
+                when "0111" =>
+                    display_value <= digit_i(31 downto 24);
+                    which_display <= "1110";
+                when others =>
+                    display_value <= display_value;
+            end case;
+         end if;
+         end if;
+    end process;
+    led7_an_o <= which_display;
+    led7_seg_o <= display_value;
 end Behavioral;

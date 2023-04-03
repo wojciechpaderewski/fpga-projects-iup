@@ -1,36 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 01.04.2023 14:42:53
--- Design Name: 
--- Module Name: EncoderAndMemory - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity EncoderAndMemory is
  Port ( 
@@ -44,7 +14,7 @@ end EncoderAndMemory;
 architecture Behavioral of EncoderAndMemory is
     signal current_digit_i: STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     signal current_segment_display_number: STD_LOGIC_VECTOR (6 downto 0) := "0000000";
-    type segment_display_type is array (0 to 15) of std_logic_vector (6 downto 0); --konwersja z binarnej na 7seg
+    type segment_display_type is array (0 to 15) of std_logic_vector (6 downto 0); --binary values to 7-segment display
     constant segment_display_hex_values : segment_display_type := -- a b c d e f g
                   ("0000001",--0
                     "1001111",--1
@@ -69,18 +39,20 @@ begin
             current_segment_display_number <= segment_display_hex_values(to_integer(unsigned(sw_i(3 downto 0))));
         end if;
     end process;
-    ChosseDisplay : process(clk_i, btn_i)
+    ChooseDisplay : process(clk_i, btn_i)
     begin
          if rising_edge(clk_i) then
             case btn_i is
                 when "0001" =>
-                    current_digit_i(7 downto 0) <= current_segment_display_number;
+                    current_digit_i(6 downto 0) <= current_segment_display_number;
                 when "0010" =>
                     current_digit_i(14 downto 8) <= current_segment_display_number;
                 when "0100" =>
                     current_digit_i(22 downto 16) <= current_segment_display_number;
                 when "1000" =>
                     current_digit_i(30 downto 24) <= current_segment_display_number;
+               when others =>
+                    current_segment_display_number <= current_segment_display_number;
             end case;
         end if;
     end process;
@@ -93,4 +65,5 @@ begin
            current_digit_i(31) <= sw_i(7);
         end if;
     end process;
+    digit_i <= current_digit_i;
 end Behavioral;
