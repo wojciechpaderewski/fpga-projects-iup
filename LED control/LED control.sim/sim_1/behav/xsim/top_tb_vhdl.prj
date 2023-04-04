@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../LED control.srcs/sources_1/new/Display.vhd" \
+"../../../../LED control.srcs/sources_1/new/EncoderAndMemory.vhd" \
+"../../../../LED control.srcs/sources_1/new/FrequencyDivider.vhd" \
+"../../../../LED control.srcs/sources_1/new/top.vhd" \
+"../../../../LED control.srcs/sim_1/new/top_tb.vhd" \
+
+# Do not sort compile order
+nosort

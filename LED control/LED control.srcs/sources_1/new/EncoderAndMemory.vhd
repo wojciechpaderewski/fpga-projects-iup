@@ -12,8 +12,8 @@ entity EncoderAndMemory is
 end EncoderAndMemory;
 
 architecture Behavioral of EncoderAndMemory is
-    signal current_digit_i: STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
-    signal current_segment_display_number: STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+    signal current_digit_i: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+    signal current_segment_display_number: std_logic_vector (6 downto 0) := "0000000";
     type segment_display_type is array (0 to 15) of std_logic_vector (6 downto 0); --binary values to 7-segment display
     constant segment_display_hex_values : segment_display_type := -- a b c d e f g
                   ("0000001",--0
@@ -37,6 +37,7 @@ begin
     begin
         if rising_edge(clk_i) then
             current_segment_display_number <= segment_display_hex_values(to_integer(unsigned(sw_i(3 downto 0))));
+            --current_segment_display_number <= "0000001";
         end if;
     end process;
     ChooseDisplay : process(clk_i, btn_i)
@@ -52,7 +53,7 @@ begin
                 when "1000" =>
                     current_digit_i(30 downto 24) <= current_segment_display_number;
                when others =>
-                    current_segment_display_number <= current_segment_display_number;
+                    --current_segment_display_number <= current_segment_display_number;
             end case;
         end if;
     end process;
