@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Mon Apr  3 21:02:09 2023
-| Host         : LAPTOP-1KCU5VQK running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Wed Apr  5 15:55:26 2023
+| Host         : Melchior-1 running 64-bit Arch Linux
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
 | Device       : 7a100tcsg324-1
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   42 |     0 |     63400 |  0.07 |
-|   LUT as Logic          |   42 |     0 |     63400 |  0.07 |
+| Slice LUTs*             |   39 |     0 |     63400 |  0.06 |
+|   LUT as Logic          |   39 |     0 |     63400 |  0.06 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |   83 |     0 |    126800 |  0.07 |
 |   Register as Flip Flop |   83 |     0 |    126800 |  0.07 |
@@ -147,13 +147,14 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |   83 |        Flop & Latch |
-| LUT4     |   25 |                 LUT |
+| LUT4     |   26 |                 LUT |
 | IBUF     |   13 |                  IO |
 | OBUF     |   12 |                  IO |
 | LUT5     |   10 |                 LUT |
 | CARRY4   |    8 |          CarryLogic |
-| LUT6     |    7 |                 LUT |
-| LUT3     |    5 |                 LUT |
+| LUT6     |    5 |                 LUT |
+| LUT2     |    2 |                 LUT |
+| LUT3     |    1 |                 LUT |
 | LUT1     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

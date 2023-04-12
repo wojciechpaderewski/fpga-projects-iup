@@ -68,12 +68,12 @@ set rc [catch {
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/LED control/LED control.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/LED control/LED control.xpr} [current_project]
-  set_property ip_output_repo {{C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/LED control/LED control.cache/ip}} [current_project]
+  set_property webtalk.parent_dir {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.cache/wt} [current_project]
+  set_property parent.project_path {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.xpr} [current_project]
+  set_property ip_output_repo {{/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet {{C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/LED control/LED control.runs/synth_1/top.dcp}}
-  read_xdc {{C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/LED control/LED control.srcs/constrs_1/new/Constraines.xdc}}
+  add_files -quiet {{/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.runs/synth_1/top.dcp}}
+  read_xdc {{/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/constrs_1/new/Constraines.xdc}}
   link_design -top top -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -146,6 +146,24 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  catch { write_mem_info -force top.mmi }
+  write_bitstream -force top.bit 
+  catch {write_debug_probes -quiet -force top}
+  catch {file copy -force top.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 
