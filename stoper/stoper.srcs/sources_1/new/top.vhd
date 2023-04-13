@@ -32,17 +32,41 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity top is
- Port ( clk_i : in STD_LOGIC;
- rst_i : in STD_LOGIC;
- start_stop_button_i : in STD_LOGIC;
- led7_an_o : out STD_LOGIC_VECTOR (3 downto 0);
- led7_seg_o : out STD_LOGIC_VECTOR (7 downto 0));
+ Port( 
+     clk_i : in STD_LOGIC;
+     rst_i : in STD_LOGIC;
+     start_stop_button_i : in STD_LOGIC;
+     led7_an_o : out STD_LOGIC_VECTOR (3 downto 0);
+     led7_seg_o : out STD_LOGIC_VECTOR (7 downto 0)
+    );
 end top;
 
 
 architecture Behavioral of top is
-
+    component debouncer
+        Port(
+            clk_i : in std_logic;
+            input_i : in std_logic;
+            output_i : out std_logic
+            );
+    end component debouncer;
+    
+    signal rst_i_deb : std_logic; 
+    signal start_stop_button_i_deb : std_logic; 
 begin
+    
+    r_debouncer : debouncer
+        Port map(
+            clk_i => clk_i,
+            input_i => rst_i,
+            output_i => rst_i_deb
+    );
 
-
+    s_debouncer : debouncer
+        Port map(
+            clk_i => clk_i,
+            input_i => start_stop_button_i,
+            output_i => start_stop_button_i_deb
+    ); 
+            
 end Behavioral;
