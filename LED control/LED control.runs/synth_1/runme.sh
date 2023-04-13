@@ -6,25 +6,21 @@
 # Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 # 
 
-echo "This script was generated under a different operating system."
-echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executing this script"
-exit
-
 if [ -z "$PATH" ]; then
-  PATH=D:/Vivado/SDK/2018.3/bin;D:/Vivado/Vivado/2018.3/ids_lite/ISE/bin/nt64;D:/Vivado/Vivado/2018.3/ids_lite/ISE/lib/nt64:D:/Vivado/Vivado/2018.3/bin
+  PATH=/home/czaras/xilinx/SDK/2018.3/bin:/home/czaras/xilinx/Vivado/2018.3/ids_lite/ISE/bin/lin64:/home/czaras/xilinx/Vivado/2018.3/bin
 else
-  PATH=D:/Vivado/SDK/2018.3/bin;D:/Vivado/Vivado/2018.3/ids_lite/ISE/bin/nt64;D:/Vivado/Vivado/2018.3/ids_lite/ISE/lib/nt64:D:/Vivado/Vivado/2018.3/bin:$PATH
+  PATH=/home/czaras/xilinx/SDK/2018.3/bin:/home/czaras/xilinx/Vivado/2018.3/ids_lite/ISE/bin/lin64:/home/czaras/xilinx/Vivado/2018.3/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=
+  LD_LIBRARY_PATH=/home/czaras/xilinx/Vivado/2018.3/ids_lite/ISE/lib/lin64
 else
-  LD_LIBRARY_PATH=:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=/home/czaras/xilinx/Vivado/2018.3/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/LED control/LED control.runs/synth_1'
+HD_PWD='/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

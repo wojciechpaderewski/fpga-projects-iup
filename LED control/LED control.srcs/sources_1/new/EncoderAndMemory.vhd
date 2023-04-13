@@ -1,3 +1,5 @@
+--Cezary Wieczorkowski
+--Wojciech Paderewski
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
@@ -37,7 +39,6 @@ begin
     begin
         if rising_edge(clk_i) then
             current_segment_display_number <= segment_display_hex_values(to_integer(unsigned(sw_i(3 downto 0))));
-            --current_segment_display_number <= "0000001";
         end if;
     end process;
     ChooseDisplay : process(clk_i, btn_i)
