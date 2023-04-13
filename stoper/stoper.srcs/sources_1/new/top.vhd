@@ -51,22 +51,24 @@ architecture Behavioral of top is
             );
     end component debouncer;
     
+    type stopwatch_state is (WAITING, COUNTING, STOPPED, OVERFLOW);
+    signal state : stopwatch_state := WAITING; 
     signal rst_i_deb : std_logic; 
     signal start_stop_button_i_deb : std_logic; 
 begin
     
     r_debouncer : debouncer
-        Port map(
-            clk_i => clk_i,
-            input_i => rst_i,
-            output_i => rst_i_deb
+    Port map(
+        clk_i => clk_i,
+        input_i => rst_i,
+        output_i => rst_i_deb
     );
 
     s_debouncer : debouncer
-        Port map(
-            clk_i => clk_i,
-            input_i => start_stop_button_i,
-            output_i => start_stop_button_i_deb
+    Port map(
+        clk_i => clk_i,
+        input_i => start_stop_button_i,
+        output_i => start_stop_button_i_deb
     ); 
             
 end Behavioral;
