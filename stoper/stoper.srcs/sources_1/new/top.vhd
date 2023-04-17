@@ -17,19 +17,11 @@
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
-
+--Cezary Wieczorkowski
+--Wojciech Paderewski
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity top is
  port( 
@@ -62,7 +54,8 @@ architecture Behavioral of top is
     
     type stopwatch_state is (WAITING, COUNTING, STOPPED, OVERFLOW);
     
-    constant ovf_symbol : std_logic_vector (15 downto 0) := "0010001010111000";
+    constant OVF_SYMBOL : std_logic_vector (15 downto 0) := "0010001010111000";
+    constant MAX_COUNTER_VAL : std_logic_vector (15 downto 0) := "0001011101101111";
     
     signal state : stopwatch_state := WAITING; 
     
@@ -74,7 +67,6 @@ architecture Behavioral of top is
     signal counter_ovf_flag : std_logic := '0';
     signal counter_output : std_logic_vector (15 downto 0);
     signal counter_output_buffer : std_logic_vector (15 downto 0);
-    
     
 begin
     
@@ -115,6 +107,10 @@ begin
                 elsif btn_flag = 1 and start_stop_button_i_deb = '0' then
                     btn_pressed := 1;
                     btn_flag := 0;
+                end if;
+                
+                if counter_output >= MAX_COUNTER_VAL then
+                    state <= OVERFLOW;
                 end if;
                 
                 case state is
@@ -159,6 +155,6 @@ begin
             
     end process stopwatch;
     
-    counter_output_buffer <= ovf_symbol when counter_ovf_flag = '1' else counter_output;
+    counter_output_buffer <= OVF_SYMBOL when counter_ovf_flag = '1' else counter_output;
     
 end Behavioral;
