@@ -52,6 +52,24 @@ architecture Behavioral of top is
             );
     end component counter;
     
+    component Display is
+        port( 
+            clk_i : in STD_LOGIC;
+            rst_i : in STD_LOGIC;
+            digit_i : in STD_LOGIC_VECTOR (31 downto 0);
+            led7_an_o : out STD_LOGIC_VECTOR (3 downto 0);
+            led7_seg_o : out STD_LOGIC_VECTOR (7 downto 0)
+            );
+    end component Display;
+    
+    component Encoder is
+        port(
+            clk_i : in STD_LOGIC;
+            digit_in : in STD_LOGIC_VECTOR (15 downto 0);
+            digit_out : out STD_LOGIC_VECTOR (31 downto 0)
+            );
+    end component Encoder;
+    
     type stopwatch_state is (WAITING, COUNTING, STOPPED, OVERFLOW);
     
     constant OVF_SYMBOL : std_logic_vector (15 downto 0) := "0010001010111000";
@@ -67,6 +85,7 @@ architecture Behavioral of top is
     signal counter_ovf_flag : std_logic := '0';
     signal counter_output : std_logic_vector (15 downto 0);
     signal counter_output_buffer : std_logic_vector (15 downto 0);
+    signal digit_bridge : std_logic_vector (31 downto 0);
     
 begin
     
@@ -90,7 +109,23 @@ begin
         rst_i => counter_rst,
         inhibit_i => counter_inhibit,
         count => counter_output
-    );      
+    );
+    
+    digit_decoder : Encoder
+    port map(
+        clk_i => clk_i,
+        digit_in => counter_output_buffer,
+        digit_out => digit_bridge
+    );    
+    
+    displayer : Display
+    port map(
+        clk_i => clk_i,
+        rst_i => '0',
+        digit_i => digit_bridge,
+        led7_an_o => led7_an_o,
+        led7_seg_o => led7_seg_o
+    );
     
     stopwatch : process(clk_i, rst_i_deb)
     variable btn_flag : integer := 0;

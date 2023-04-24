@@ -16,6 +16,11 @@ end Encoder;
 architecture Behavioral of Encoder is
     signal current_digit_i: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
     signal current_segment_display_number: std_logic_vector (6 downto 0) := "0000000";
+    signal input_digit_int: integer := 0;
+    signal th_part: integer := 0;
+    signal hun_part: integer := 0;
+    signal dec_part: integer := 0;
+    signal int_part: integer  := 0;
     type segment_display_type is array (0 to 15) of std_logic_vector (6 downto 0); --binary values to 7-segment display
     constant segment_display_hex_values : segment_display_type := -- a b c d e f g
                   ("0000001",--0
@@ -35,37 +40,28 @@ architecture Behavioral of Encoder is
                     "0110000",--E
                     "0111000");--F
 begin
-    SetNumber : process(clk_i, sw_i)
+    SetNumber : process(clk_i)
     begin
         if rising_edge(clk_i) then
-            current_segment_display_number <= segment_display_hex_values(to_integer(unsigned(sw_i(3 downto 0))));
+            input_digit_int <= to_integer(unsigned(digit_in(15 downto 0)));
+            th_part <= (input_digit_int mod 10000) / 1000;
+            hun_part <= (input_digit_int mod 1000) / 100;
+            dec_part <= (input_digit_int mod 100) / 10;
+            int_part <= (input_digit_int mod 10);
+            
+            current_digit_i(7 downto 1) <= segment_display_hex_values(int_part);
+            current_digit_i(15 downto 9) <= segment_display_hex_values(dec_part);
+            current_digit_i(23 downto 17) <= segment_display_hex_values(hun_part);
+            current_digit_i(31 downto 25) <= segment_display_hex_values(th_part);
         end if;
     end process;
-    ChooseDisplay : process(clk_i, btn_i)
-    begin
-         if rising_edge(clk_i) then
-            case btn_i is
-                when "0001" =>
-                    current_digit_i(6 downto 0) <= current_segment_display_number;
-                when "0010" =>
-                    current_digit_i(14 downto 8) <= current_segment_display_number;
-                when "0100" =>
-                    current_digit_i(22 downto 16) <= current_segment_display_number;
-                when "1000" =>
-                    current_digit_i(30 downto 24) <= current_segment_display_number;
-               when others =>
-                    --current_segment_display_number <= current_segment_display_number;
-            end case;
-        end if;
-    end process;
-    SetDots: process(clk_i, sw_i)
+ 
+    SetDots: process(clk_i)
     begin
         if rising_edge(clk_i) then
-           current_digit_i(7) <= sw_i(4);
-           current_digit_i(15) <= sw_i(5);
-           current_digit_i(23) <= sw_i(6);
-           current_digit_i(31) <= sw_i(7);
+           current_digit_i(16) <= '0';
         end if;
     end process;
-    digit_i <= current_digit_i;
+    
+    digit_out <= current_digit_i;
 end Behavioral;
