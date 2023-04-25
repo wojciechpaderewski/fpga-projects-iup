@@ -14,7 +14,7 @@ entity Encoder is
 end Encoder;
 
 architecture Behavioral of Encoder is
-    signal current_digit_i: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+    signal current_digit_i: std_logic_vector (31 downto 0) := "00000001000000000000000100000001";
     signal current_segment_display_number: std_logic_vector (6 downto 0) := "0000000";
     signal input_digit_int: integer := 0;
     signal th_part: integer := 0;
@@ -53,13 +53,6 @@ begin
             current_digit_i(15 downto 9) <= segment_display_hex_values(dec_part);
             current_digit_i(23 downto 17) <= segment_display_hex_values(hun_part);
             current_digit_i(31 downto 25) <= segment_display_hex_values(th_part);
-        end if;
-    end process;
- 
-    SetDots: process(clk_i)
-    begin
-        if rising_edge(clk_i) then
-           current_digit_i(16) <= '0';
         end if;
     end process;
     

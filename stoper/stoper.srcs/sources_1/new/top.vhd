@@ -73,7 +73,7 @@ architecture Behavioral of top is
     type stopwatch_state is (WAITING, COUNTING, STOPPED, OVERFLOW);
     
     constant OVF_SYMBOL : std_logic_vector (15 downto 0) := "0010001010111000";
-    constant MAX_COUNTER_VAL : std_logic_vector (15 downto 0) := "0001011101101111";
+    constant MAX_COUNTER_VAL : std_logic_vector (15 downto 0) := "0001011101110000";
     
     signal state : stopwatch_state := WAITING; 
     
@@ -153,6 +153,7 @@ begin
                     when WAITING =>
                         counter_rst <= '1';
                         counter_ovf_flag <= '0';
+                        counter_inhibit <= '0';
                         
                         if btn_pressed = 1 then
                             state <= COUNTING;
@@ -174,6 +175,7 @@ begin
                         
                     when OVERFLOW =>
                         counter_ovf_flag <= '1';
+                        counter_rst <= '1';
                         
                         if btn_pressed = 1 then
                             state <= WAITING;

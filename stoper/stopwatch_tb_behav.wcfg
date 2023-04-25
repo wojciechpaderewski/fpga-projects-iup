@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="stopwatch_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="stopwatch_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="307000000000000fs"></ZoomStartTime>
+      <ZoomEndTime time="765000000000001fs"></ZoomEndTime>
+      <Cursor1Time time="315000015000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="/stopwatch_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stopwatch_tb/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stopwatch_tb/start_stop_button">
+      <obj_property name="ElementShortName">start_stop_button</obj_property>
+      <obj_property name="ObjectShortName">start_stop_button</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stopwatch_tb/uut/counter_output_buffer">
+      <obj_property name="ElementShortName">counter_output_buffer[15:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_output_buffer[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stopwatch_tb/uut/digit_decoder/digit_out">
+      <obj_property name="ElementShortName">digit_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">digit_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/stopwatch_tb/uut/digit_decoder/input_digit_int">
+      <obj_property name="ElementShortName">input_digit_int</obj_property>
+      <obj_property name="ObjectShortName">input_digit_int</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/stopwatch_tb/uut/digit_decoder/th_part">
+      <obj_property name="ElementShortName">th_part</obj_property>
+      <obj_property name="ObjectShortName">th_part</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/stopwatch_tb/uut/digit_decoder/hun_part">
+      <obj_property name="ElementShortName">hun_part</obj_property>
+      <obj_property name="ObjectShortName">hun_part</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/stopwatch_tb/uut/digit_decoder/dec_part">
+      <obj_property name="ElementShortName">dec_part</obj_property>
+      <obj_property name="ObjectShortName">dec_part</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/stopwatch_tb/uut/digit_decoder/int_part">
+      <obj_property name="ElementShortName">int_part</obj_property>
+      <obj_property name="ObjectShortName">int_part</obj_property>
+   </wvobject>
+</wave_config>
