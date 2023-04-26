@@ -1,5 +1,3 @@
---Cezary Wieczorkowski
---Wojciech Paderewski
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -45,20 +43,20 @@ begin
         else
          if rising_edge(divided_clk) then
             case which_display is
-                when "1110" =>
+                when "0111" =>
                     display_value <= digit_i(7 downto 0);
                     --which_display <= "1101";
-                when "1101" =>
+                when "1110" =>
                     display_value <= digit_i(15 downto 8);
                     --which_display <= "1011";
-                when "1011" =>
+                when "1101" =>
                     display_value <= digit_i(23 downto 16);
                     --which_display <= "0111";
-                when "0111" =>
+                when "1011" =>
                     display_value <= digit_i(31 downto 24);
                     --which_display <= "1110";
                 when others =>
-                    display_value <= display_value;
+                   -- display_value <= display_value;
             end case;
             which_display <= which_display(2 downto 0) & which_display(3);
          end if;

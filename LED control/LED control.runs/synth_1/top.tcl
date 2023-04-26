@@ -17,22 +17,24 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.cache/wt} [current_project]
-set_property parent.project_path {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.xpr} [current_project]
+set_property webtalk.parent_dir {C:/Users/lab1/Desktop/LED control/LED control.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/lab1/Desktop/LED control/LED control.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.cache/ip} [current_project]
+set_property ip_output_repo {c:/Users/lab1/Desktop/LED control/LED control.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/Display.vhd}
-  {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/EncoderAndMemory.vhd}
-  {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/FrequencyDivider.vhd}
-  {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/top.vhd}
+  {C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/Display.vhd}
+  {C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/EncoderAndMemory.vhd}
+  {C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/FrequencyDivider.vhd}
+  {C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/top.vhd}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -42,8 +44,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/constrs_1/new/Constraines.xdc}}
-set_property used_in_implementation false [get_files {{/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/constrs_1/new/Constraines.xdc}}]
+read_xdc {{C:/Users/lab1/Desktop/LED control/LED control.srcs/constrs_1/new/Constraines.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/lab1/Desktop/LED control/LED control.srcs/constrs_1/new/Constraines.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

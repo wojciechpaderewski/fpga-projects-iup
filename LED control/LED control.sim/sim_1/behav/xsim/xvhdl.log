@@ -1,2 +1,10 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'Display'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/EncoderAndMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'EncoderAndMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/FrequencyDivider.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FrequencyDivider'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/lab1/Desktop/LED control/LED control.srcs/sim_1/new/top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_tb'

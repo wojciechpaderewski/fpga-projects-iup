@@ -46,16 +46,16 @@ begin
         else
          if rising_edge(divided_clk) then
             case which_display is
-                when "1110" =>
+                when "0111" =>  --"1110"
                     display_value <= digit_i(7 downto 0);
                     --which_display <= "1101";
-                when "1101" =>
+                when "1110" =>  --"1101"
                     display_value <= digit_i(15 downto 8);
                     --which_display <= "1011";
-                when "1011" =>
+                when "1101" =>  --"1011"
                     display_value <= digit_i(23 downto 16);
                     --which_display <= "0111";
-                when "0111" =>
+                when "1011" =>  --"0111"
                     display_value <= digit_i(31 downto 24);
                     --which_display <= "1110";
                 when others =>

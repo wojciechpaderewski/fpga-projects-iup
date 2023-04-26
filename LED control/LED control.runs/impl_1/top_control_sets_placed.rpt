@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Apr  5 15:55:48 2023
-| Host         : Melchior-1 running 64-bit Arch Linux
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Wed Apr  5 16:55:05 2023
+| Host         : fpgalab107 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
 | Device       : xc7a100t
@@ -49,10 +49,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              16 |            9 |
+| No           | No                    | No                     |              16 |            7 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              31 |            8 |
-| Yes          | No                    | No                     |              36 |           13 |
+| Yes          | No                    | No                     |              36 |           12 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -65,12 +65,12 @@ Table of Contents
 |   Clock Signal   |            Enable Signal            |  Set/Reset Signal | Slice Load Count | Bel Load Count |
 +------------------+-------------------------------------+-------------------+------------------+----------------+
 | ~clk_i_IBUF_BUFG |                                     |                   |                1 |              1 |
-|  displayer/d/CLK |                                     |                   |                3 |              4 |
-|  clk_i_IBUF_BUFG | encoder/current_digit_i[14]_i_1_n_0 |                   |                3 |              7 |
-|  clk_i_IBUF_BUFG | encoder/current_digit_i[22]_i_1_n_0 |                   |                2 |              7 |
-|  clk_i_IBUF_BUFG | encoder/current_digit_i[30]_i_1_n_0 |                   |                2 |              7 |
-|  clk_i_IBUF_BUFG | encoder/current_digit_i[6]_i_1_n_0  |                   |                3 |              7 |
-|  displayer/d/CLK | displayer/display_value[7]_i_1_n_0  |                   |                3 |              8 |
+|  displayer/d/CLK |                                     |                   |                1 |              4 |
+|  clk_i_IBUF_BUFG | encoder/current_digit_i[23]_i_1_n_0 |                   |                2 |              7 |
+|  clk_i_IBUF_BUFG | encoder/current_digit_i[7]_i_1_n_0  |                   |                3 |              7 |
+|  clk_i_IBUF_BUFG | encoder/current_digit_i[31]_i_1_n_0 |                   |                3 |              7 |
+|  clk_i_IBUF_BUFG | encoder/current_digit_i[15]_i_1_n_0 |                   |                2 |              7 |
+|  displayer/d/CLK | displayer/display_value[7]_i_1_n_0  |                   |                2 |              8 |
 |  clk_i_IBUF_BUFG |                                     |                   |                5 |             11 |
 | ~clk_i_IBUF_BUFG |                                     | displayer/d/clear |                8 |             31 |
 +------------------+-------------------------------------+-------------------+------------------+----------------+

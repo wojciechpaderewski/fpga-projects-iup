@@ -1,9 +1,9 @@
 0.6
 2018.3
-Dec  6 2018
-23:39:36
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sim_1/new/top_tb.vhd,1680640559,vhdl,,,,top_tb,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/Display.vhd,1680643364,vhdl,,,,display,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/EncoderAndMemory.vhd,1680642725,vhdl,,,,encoderandmemory,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/FrequencyDivider.vhd,1680592397,vhdl,,,,frequencydivider,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/sources_1/new/top.vhd,1680592397,vhdl,,,,top,,,,,,,,
+Dec  7 2018
+00:33:28
+C:/Users/lab1/Desktop/LED control/LED control.srcs/sim_1/new/top_tb.vhd,1680633358,vhdl,,,,top_tb,,,,,,,,
+C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/Display.vhd,1680706067,vhdl,,,,display,,,,,,,,
+C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/EncoderAndMemory.vhd,1680706440,vhdl,,,,encoderandmemory,,,,,,,,
+C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/FrequencyDivider.vhd,1680585196,vhdl,,,,frequencydivider,,,,,,,,
+C:/Users/lab1/Desktop/LED control/LED control.srcs/sources_1/new/top.vhd,1680585196,vhdl,,,,top,,,,,,,,

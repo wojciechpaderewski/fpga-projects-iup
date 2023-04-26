@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Wed Apr  5 15:56:07 2023
-| Host             : Melchior-1 running 64-bit Arch Linux
+| Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date             : Wed Apr  5 16:55:40 2023
+| Host             : fpgalab107 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
 | Device           : xc7a100tcsg324-1
@@ -53,8 +53,8 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      142 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       39 |     63400 |            0.06 |
+| Slice Logic    |    <0.001 |      146 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       43 |     63400 |            0.07 |
 |   CARRY4       |    <0.001 |        8 |     15850 |            0.05 |
 |   Register     |    <0.001 |       83 |    126800 |            0.07 |
 |   Others       |     0.000 |        6 |       --- |             --- |

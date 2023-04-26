@@ -42,13 +42,17 @@ architecture Behavioral of stopwatch_tb is
     signal clk : std_logic := '0';
     signal rst : std_logic := '0';
     signal start_stop_button : std_logic := '0';
+    signal led7_an_o : STD_LOGIC_VECTOR (3 downto 0) := "0000";
+    signal led7_seg_o : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
        
 begin
     uut: top
     port map(
         clk_i => clk,
         rst_i => rst,
-        start_stop_button_i => start_stop_button
+        start_stop_button_i => start_stop_button,
+        led7_an_o => led7_an_o,
+        led7_seg_o => led7_seg_o
     );
     
     clk <= not clk after period/2;

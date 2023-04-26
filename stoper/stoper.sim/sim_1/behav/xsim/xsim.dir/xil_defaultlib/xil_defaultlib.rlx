@@ -1,11 +1,11 @@
 0.6
 2018.3
-Dec  6 2018
-23:39:36
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/stoper/stoper.srcs/sim_1/new/stopwatch_tb.vhd,1682334990,vhdl,,,,stopwatch_tb,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/stoper/stoper.srcs/sources_1/new/Display.vhd,1682334990,vhdl,,,,display,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/stoper/stoper.srcs/sources_1/new/Encoder.vhd,1682453239,vhdl,,,,encoder,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/stoper/stoper.srcs/sources_1/new/FrequencyDivider.vhd,1682334990,vhdl,,,,frequencydivider,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/stoper/stoper.srcs/sources_1/new/counter.vhd,1682334990,vhdl,,,,counter,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/stoper/stoper.srcs/sources_1/new/debouncer.vhd,1682334990,vhdl,,,,debouncer,,,,,,,,
-/home/czaras/Projekty/studia/IUP/fpga-projects-iup/stoper/stoper.srcs/sources_1/new/top.vhd,1682454506,vhdl,,,,top,,,,,,,,
+Dec  7 2018
+00:33:28
+C:/Users/lab1/Desktop/stoper/stoper.srcs/sim_1/new/stopwatch_tb.vhd,1682519373,vhdl,,,,stopwatch_tb,,,,,,,,
+C:/Users/lab1/Desktop/stoper/stoper.srcs/sources_1/new/Display.vhd,1682518943,vhdl,,,,display,,,,,,,,
+C:/Users/lab1/Desktop/stoper/stoper.srcs/sources_1/new/Encoder.vhd,1682498512,vhdl,,,,encoder,,,,,,,,
+C:/Users/lab1/Desktop/stoper/stoper.srcs/sources_1/new/FrequencyDivider.vhd,1682327790,vhdl,,,,frequencydivider,,,,,,,,
+C:/Users/lab1/Desktop/stoper/stoper.srcs/sources_1/new/counter.vhd,1682327790,vhdl,,,,counter,,,,,,,,
+C:/Users/lab1/Desktop/stoper/stoper.srcs/sources_1/new/debouncer.vhd,1682327790,vhdl,,,,debouncer,,,,,,,,
+C:/Users/lab1/Desktop/stoper/stoper.srcs/sources_1/new/top.vhd,1682448380,vhdl,,,,top,,,,,,,,

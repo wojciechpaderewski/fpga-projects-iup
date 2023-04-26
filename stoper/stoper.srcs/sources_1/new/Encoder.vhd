@@ -16,11 +16,11 @@ end Encoder;
 architecture Behavioral of Encoder is
     signal current_digit_i: std_logic_vector (31 downto 0) := "00000001000000000000000100000001";
     signal current_segment_display_number: std_logic_vector (6 downto 0) := "0000000";
-    signal input_digit_int: integer := 0;
-    signal th_part: integer := 0;
-    signal hun_part: integer := 0;
-    signal dec_part: integer := 0;
-    signal int_part: integer  := 0;
+    signal input_digit_int: integer range 0 to 65536 := 0;
+    signal th_part: integer range 0 to 9 := 0;
+    signal hun_part: integer range 0 to 9 := 0;
+    signal dec_part: integer range 0 to 9 := 0;
+    signal int_part: integer range 0 to 9 := 0;
     type segment_display_type is array (0 to 15) of std_logic_vector (6 downto 0); --binary values to 7-segment display
     constant segment_display_hex_values : segment_display_type := -- a b c d e f g
                   ("0000001",--0

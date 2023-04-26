@@ -60,20 +60,22 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.cache/wt} [current_project]
-  set_property parent.project_path {/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.xpr} [current_project]
-  set_property ip_output_repo {{/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.cache/ip}} [current_project]
+  set_property webtalk.parent_dir {C:/Users/lab1/Desktop/LED control/LED control.cache/wt} [current_project]
+  set_property parent.project_path {C:/Users/lab1/Desktop/LED control/LED control.xpr} [current_project]
+  set_property ip_output_repo {{C:/Users/lab1/Desktop/LED control/LED control.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet {{/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.runs/synth_1/top.dcp}}
-  read_xdc {{/home/czaras/Projekty/studia/IUP/fpga-projects-iup/LED control/LED control.srcs/constrs_1/new/Constraines.xdc}}
+  add_files -quiet {{C:/Users/lab1/Desktop/LED control/LED control.runs/synth_1/top.dcp}}
+  read_xdc {{C:/Users/lab1/Desktop/LED control/LED control.srcs/constrs_1/new/Constraines.xdc}}
   link_design -top top -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
