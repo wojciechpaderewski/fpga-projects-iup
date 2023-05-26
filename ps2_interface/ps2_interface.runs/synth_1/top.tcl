@@ -28,7 +28,11 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/top.vhd
+read_vhdl -library xil_defaultlib {
+  C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/Encoder.vhd
+  C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/Seg_Display.vhd
+  C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/top.vhd
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

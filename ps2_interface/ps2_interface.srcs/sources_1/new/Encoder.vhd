@@ -15,7 +15,7 @@ entity Encoder is
 end Encoder;
 
 architecture Behavioral of Encoder is
-    signal current_digit_i: std_logic_vector (6 downto 0) := "00000000";
+    signal current_digit_i: std_logic_vector (6 downto 0) := "0000000";
     type segment_display_type is array (0 to 15) of std_logic_vector (6 downto 0);
     type key_type is array (0 to 15) of  integer range 0 to 255; --binary values to 7-segment display
     signal keyValue: integer range 0 to 255 := 0;
@@ -62,12 +62,12 @@ begin
     begin 
         if (rst_i = '1') then
            lastKeyValue <= 0;
-           current_digit_i <= "11111111";
+           current_digit_i <= "1111111";
         elsif rising_edge(clk_i) then
         keyValue <= to_integer(unsigned(digit_in(7 downto 0)));
             if(lastKeyValue /= keyValue) then
             
-                for i in 0 to 15 loop
+                for i in 0 to segment_display_hex_values'length-1 loop
                     if(keyValue = key_hex_values(i)) then 
                         current_digit_i <= segment_display_hex_values(i);
                         isOtherKeyPresed <= '0';
@@ -79,7 +79,7 @@ begin
                 end loop;
                 
                 if(isOtherKeyPresed = '1') then 
-                    current_digit_i <= "11111111";
+                    current_digit_i <= "1111111";
                 end if;        
             end if;
         end if;
