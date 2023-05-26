@@ -60,6 +60,6 @@ begin
     );
     
     clk <= not clk after period/2;
-    ps2_clk <= not ps2_clk after period/2;
+    ps2_clk <= not ps2_clk after ps2_period/2;
 
 end Behavioral;
