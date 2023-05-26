@@ -31,6 +31,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/Encoder.vhd
   C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/Seg_Display.vhd
+  C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/ps2_transiver.vhd
   C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/top.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
