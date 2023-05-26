@@ -32,6 +32,8 @@ entity top is
           led7_seg_o : out STD_LOGIC_VECTOR (7 downto 0));
 end top;
 
+
+
 architecture Behavioral of top is
     component Seg_Display is
         port( 
@@ -53,6 +55,7 @@ architecture Behavioral of top is
     signal enc_dis_digit_bridge : std_logic_vector (6 downto 0);
     signal ps2_enc_digit_bridge : std_logic_vector (7 downto 0);
 
+<<<<<<< HEAD
 begin
     digit_decoder : Encoder
     port map(
@@ -69,5 +72,26 @@ begin
         led7_an_o => led7_an_o,
         led7_seg_o => led7_seg_o
     );
+=======
+component ps2_transiver is
+    Port (clk_i : in STD_LOGIC;
+          rst_i : in STD_LOGIC;
+          ps2_clk_i : in STD_LOGIC;
+          ps2_data_i : in STD_LOGIC;
+          ps2_data_byte : out std_logic_vector(7 downto 0));
+end component ps2_transiver;
 
+signal ps2_data_byte : std_logic_vector(7 downto 0);
+>>>>>>> ps2_transiver
+
+begin
+transiver : ps2_transiver
+    port map(
+        clk_i => clk_i,
+        rst_i => rst_i,
+        ps2_clk_i => ps2_clk_i,
+        ps2_data_i => ps2_data_i,
+        ps2_data_byte => ps2_data_byte
+    );
+    
 end Behavioral;
