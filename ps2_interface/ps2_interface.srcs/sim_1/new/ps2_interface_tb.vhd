@@ -38,7 +38,7 @@ component top is
 end component top;
 
 constant period: time := 10ns;
-constant ps2_period: time := 66666ns;
+constant ps2_period: time := 66000ns;
 
 signal clk: std_logic := '0';
 signal rst: std_logic := '0';
@@ -46,6 +46,7 @@ signal ps2_clk: std_logic := '0';
 signal ps2_data: std_logic := '0';
 signal led7_an: std_logic_vector (3 downto 0) := "0000";
 signal led7_seg: std_logic_vector (7 downto 0) := "00000000";
+signal data_clock_period: time := ps2_period;
 
 begin
 
@@ -60,6 +61,37 @@ begin
     );
     
     clk <= not clk after period/2;
-    ps2_clk <= not ps2_clk after period/2;
+    ps2_clk <= not ps2_clk after ps2_period/2;
 
+   stim_proc: process
+   begin
+        ps2_data <= '1';
+        wait for data_clock_period * 3.5;
+        ps2_data <= '0'; --start
+		wait for data_clock_period;
+			 
+  -- 0001 1100 A key
+		ps2_data <= '0';
+		wait for data_clock_period;
+		ps2_data <= '0';
+		wait for data_clock_period;
+		ps2_data <= '0';
+		wait for data_clock_period;
+		ps2_data <= '1';
+		wait for data_clock_period;
+
+        ps2_data <= '1';
+		wait for data_clock_period;
+		ps2_data <= '1';
+		wait for data_clock_period;
+        ps2_data <= '0';
+		wait for data_clock_period;
+		ps2_data <= '0';
+		wait for data_clock_period;
+
+		ps2_data <= '0'; -- bit parzystoœci
+		wait for data_clock_period;
+		ps2_data <= '1'; -- bit stopu
+		wait for 1000us;
+   end process;
 end Behavioral;
