@@ -1,2 +1,26 @@
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sim_1/new/ps2_interface_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'ps2_interface_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/Encoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Encoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/Seg_Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Seg_Display'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/ps2_transiver.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ps2_transiver'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sim_1/new/ps2_interface_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ps2_interface_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/edge_detector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'edge_detector'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/ps2_transiver.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ps2_transiver'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sources_1/new/edge_detector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'edge_detector'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sim_1/new/ps2_interface_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ps2_interface_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sim_1/new/ps2_interface_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ps2_interface_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sim_1/new/ps2_interface_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ps2_interface_tb'

@@ -65,8 +65,8 @@ begin
 
    stim_proc: process
    begin
-        ps2_data <= '1';
-        wait for data_clock_period * 3.5;
+        --ps2_data <= '1';
+        --wait for data_clock_period * 3.5;
         ps2_data <= '0'; --start
 		wait for data_clock_period;
 			 
@@ -89,7 +89,7 @@ begin
 		ps2_data <= '0';
 		wait for data_clock_period;
 
-		ps2_data <= '0'; -- bit parzystoœci
+		ps2_data <= '0'; -- bit parzystoï¿½ci
 		wait for data_clock_period;
 		ps2_data <= '1'; -- bit stopu
 		wait for 1000us;

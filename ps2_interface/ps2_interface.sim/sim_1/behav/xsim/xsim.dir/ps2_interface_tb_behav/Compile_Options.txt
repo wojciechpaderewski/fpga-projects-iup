@@ -1,1 +1,1 @@
--wto "cef63fe6b5164cedafdebeab4317972c" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "ps2_interface_tb_behav" "xil_defaultlib.ps2_interface_tb" -log "elaborate.log" 
+-wto "cef63fe6b5164cedafdebeab4317972c" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "ps2_interface_tb_behav" "xil_defaultlib.ps2_interface_tb" -log "elaborate.log" 

@@ -2,6 +2,7 @@
 vhdl xil_defaultlib  \
 "../../../../ps2_interface.srcs/sources_1/new/Encoder.vhd" \
 "../../../../ps2_interface.srcs/sources_1/new/Seg_Display.vhd" \
+"../../../../ps2_interface.srcs/sources_1/new/edge_detector.vhd" \
 "../../../../ps2_interface.srcs/sources_1/new/ps2_transiver.vhd" \
 "../../../../ps2_interface.srcs/sources_1/new/top.vhd" \
 "../../../../ps2_interface.srcs/sim_1/new/ps2_interface_tb.vhd" \

@@ -1,7 +1,7 @@
 Vivado Simulator 2018.3
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cef63fe6b5164cedafdebeab4317972c --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ps2_interface_tb_behav xil_defaultlib.ps2_interface_tb -log elaborate.log 
-Using 2 slave threads.
+Running: /home/czaras/xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto cef63fe6b5164cedafdebeab4317972c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot ps2_interface_tb_behav xil_defaultlib.ps2_interface_tb -log elaborate.log 
+Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
@@ -13,6 +13,7 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
 Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.edge_detector [edge_detector_default]
 Compiling architecture behavioral of entity xil_defaultlib.ps2_transiver [ps2_transiver_default]
 Compiling architecture behavioral of entity xil_defaultlib.Encoder [encoder_default]
 Compiling architecture behavioral of entity xil_defaultlib.Seg_Display [seg_display_default]

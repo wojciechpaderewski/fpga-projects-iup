@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/wojtp/OneDrive/Pulpit/Studia/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sim_1/new/ps2_interface_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/czaras/Projekty/studia/IUP/fpga-projects-iup/ps2_interface/ps2_interface.srcs/sim_1/new/ps2_interface_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'ps2_interface_tb'
