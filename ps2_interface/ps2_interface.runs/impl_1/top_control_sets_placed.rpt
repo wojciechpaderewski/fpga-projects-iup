@@ -1,0 +1,85 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Wed May 31 12:47:43 2023
+| Host         : Melchior-1 running 64-bit Arch Linux
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    16 |
+| Unused register locations in slices containing registers |    69 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            8 |
+|      2 |            1 |
+|      7 |            1 |
+|      8 |            3 |
+|     10 |            1 |
+|    16+ |            2 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              10 |            5 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              24 |           13 |
+| Yes          | No                    | Yes                    |              81 |           24 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+------------------------------------------+------------------+------------------+----------------+
+|   Clock Signal   |               Enable Signal              | Set/Reset Signal | Slice Load Count | Bel Load Count |
++------------------+------------------------------------------+------------------+------------------+----------------+
+|  clk_i_IBUF_BUFG | transiver/p_0_in[6]                      |                  |                1 |              1 |
+|  clk_i_IBUF_BUFG | transiver/p_0_in[5]                      |                  |                1 |              1 |
+|  clk_i_IBUF_BUFG | transiver/p_0_in[1]                      |                  |                1 |              1 |
+|  clk_i_IBUF_BUFG | transiver/p_0_in[8]                      |                  |                1 |              1 |
+|  clk_i_IBUF_BUFG | transiver/p_0_in[7]                      |                  |                1 |              1 |
+|  clk_i_IBUF_BUFG | transiver/p_0_in[4]                      |                  |                1 |              1 |
+|  clk_i_IBUF_BUFG | transiver/p_0_in[2]                      |                  |                1 |              1 |
+|  clk_i_IBUF_BUFG | transiver/p_0_in[3]                      |                  |                1 |              1 |
+|  clk_i_IBUF_BUFG | transiver/detector/E[0]                  | rst_i_IBUF       |                1 |              2 |
+|  clk_i_IBUF_BUFG | digit_decoder/current_digit_i[6]_i_1_n_0 | rst_i_IBUF       |                4 |              7 |
+|  clk_i_IBUF_BUFG | transiver/ps2_data_buff0                 |                  |                3 |              8 |
+|  clk_i_IBUF_BUFG | digit_decoder/p_0_in                     |                  |                2 |              8 |
+|  clk_i_IBUF_BUFG | digit_decoder/lastKeyValue[7]_i_1_n_0    | rst_i_IBUF       |                2 |              8 |
+|  clk_i_IBUF_BUFG |                                          |                  |                5 |             10 |
+|  clk_i_IBUF_BUFG | transiver/recieved_bits_1                | rst_i_IBUF       |                9 |             32 |
+|  clk_i_IBUF_BUFG | transiver/delay_counter                  | rst_i_IBUF       |                8 |             32 |
++------------------+------------------------------------------+------------------+------------------+----------------+
+
+

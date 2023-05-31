@@ -1,3 +1,6 @@
+--Cezary Wieczorkowski
+--Wojciech Paderewski
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
@@ -43,6 +46,8 @@ begin
         if (rst_i = '1') then
            recieved_bits := 0;  
            delay_counter := 0;
+           ps2_packet_buff <= (others => '0');
+           ps2_data_buff <= (others => '0');
            state <= waiting;    
         else
             if rising_edge (clk_i) then
@@ -77,13 +82,13 @@ begin
                     
                         if ps2_packet_buff(8 downto 1) /= BRAKE_SYMBOL then
                             ps2_data_buff <= ps2_packet_buff(8 downto 1);
-                            recieved_bits := 0;
                         end if;
+                        recieved_bits := 0;
                         state <= WAITING;
                         
                     when others =>
                     
-                        state <= waiting;
+                        state <= WAITING;
                         
                 end case;    
             end if;

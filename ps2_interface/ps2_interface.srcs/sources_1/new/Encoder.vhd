@@ -64,9 +64,7 @@ begin
            lastKeyValue <= 0;
            current_digit_i <= "1111111";
         elsif rising_edge(clk_i) then
-        keyValue <= to_integer(unsigned(digit_in(7 downto 0)));
-            if(lastKeyValue /= keyValue) then
-            
+        keyValue <= to_integer(unsigned(digit_in(7 downto 0)));           
                 for i in 0 to segment_display_hex_values'length-1 loop
                     if(keyValue = key_hex_values(i)) then 
                         current_digit_i <= segment_display_hex_values(i);
@@ -82,7 +80,6 @@ begin
                     current_digit_i <= "1111111";
                 end if;        
             end if;
-        end if;
     end process;
     
     digit_out <= current_digit_i;
